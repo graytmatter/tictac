@@ -1,0 +1,54 @@
+h1{
+	text-align: center;
+}
+.resetB{
+	padding-top: 30px;
+	text-align: right;
+}
+.optionsB{
+	padding-top: 30px;
+	text-align: left;
+}
+.box{
+	height: 200px;
+	width: 100%;
+	border: 2px dashed #000;
+	float: center;
+	text-align: center;
+	font-size: 150px;
+}
+.c{
+	border: 0px solid #000; 
+}
+
+.side{
+	border-top: 0px;
+	border-bottom:0px;
+}
+.vert{
+	border-left: 0px;
+	border-right: 0px;
+}
+
+
+@media (min-width: 0px){
+	.box{
+		height: 120px;
+		font-size: 90px;
+	}
+}
+@media (min-width: 768px){
+	.box{
+		height: 170px;
+		font-size: 130px;
+	}
+}
+@media (min-width: 992px){
+	.box{
+		height: 220px;
+		font-size: 155px;
+	}
+}
+.col{
+	padding: 0px;
+}
