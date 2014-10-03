@@ -49,6 +49,12 @@ h1{
 		font-size: 155px;
 	}
 }
+@media (min-width: 1200px){
+	.box{
+		height: 270px;
+		font-size: 205px;
+	}
+}
 .col{
 	padding: 0px;
 }

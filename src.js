@@ -19,9 +19,11 @@ var viewItem = function( event ){
 		if(player == 1){
 			this.innerHTML=(players.a);
 			this.style.background="#ccc";
+			this.style.color = "#eee";
 		}else{
 			this.innerHTML=(players.b);
 			this.style.background="#ccc";
+			this.style.color = "#eee";
 		}
 	}
 };
