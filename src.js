@@ -12,18 +12,19 @@ var setUpElements = function(){
 		list_items[i].addEventListener("mouseover", viewItem);
 		list_items[i].addEventListener("mouseout", sViewItem);
 	}
+	document.getElementById("PlayO").addEventListener("click", playO);
 };
 
 var viewItem = function( event ){
 	if(!(this.classList.contains('selected'))){
 		if(player == 1){
 			this.innerHTML=(players.a);
-			this.style.background="#ccc";
-			this.style.color = "#eee";
+			this.style.background="#eee";
+			this.style.color = "#aaa";
 		}else{
 			this.innerHTML=(players.b);
-			this.style.background="#ccc";
-			this.style.color = "#eee";
+			this.style.background="#eee";
+			this.style.color = "#555";
 		}
 	}
 };
@@ -45,7 +46,7 @@ var selectItem = function( event ){
 			this.style.color="blue";
 		}
 		turnCount++;
-		board[this.id.split("")[1]] = player;
+		board[this.id[1]] = player;
 		if(turnCount>=5){
 			checkWin(player);
 		}
@@ -65,7 +66,7 @@ var resetButtonHandler = function() {
 		list_items[i].style.color="black";
 	}
 	board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-	var turnCount = 0;
+	turnCount = 0;
 };
 
 var initialize = function(){
@@ -77,7 +78,7 @@ window.onload=initialize;
 
 console.log("JavaScript is alive!");
 var checkWin = function(p){
-	console.log("check")
+	console.log("check");
 	if(check(p)){
 		result(p);
 	}
@@ -96,11 +97,11 @@ var check= function(p){
 };
 var result= function(p){
 	var list_items = document.querySelectorAll("div.box");
-	var array = ["","W", "!!","'" , "I", "!!", "s", "N", "!!"];
+	var array = ["!!","W", "!!","" , "I", "!!", "!!", "N", "!!"];
 	if(p > 0){
-		array[0]="X";
+		array[3]="X's";
 	}else{
-		array[0]="O";
+		array[3]="O's";
 	}
 	for (var i = list_items.length - 1; i >= 0; i--) {
 		list_items[i].innerHTML=array[i];
@@ -112,3 +113,12 @@ var result= function(p){
 		}
 	}	
 };
+
+
+var playO = function(){
+	document.getElementsByTagName("script")[2].setAttribute("src", "AIo.js");
+	console.log(document.getElementsByTagName("script")[2].getAttribute("src"));
+
+};
+
+

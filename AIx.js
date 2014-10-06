@@ -40,7 +40,7 @@ var selectItem = function( event ){
 			this.style.color="blue";
 		}
 		turnCount++;
-		board[this.id.split("")[1]] = player;
+		board[this.id[1]] = player;
 		if(turnCount>=5){
 			checkWin(player);
 		}
@@ -95,11 +95,11 @@ var check= function(p){
 };
 var result= function(p){
 	var list_items = document.querySelectorAll("div.box");
-	var array = ["","W", "!","'" , "I", "!", "s", "N", "!"];
+	var array = ["","W", "!","" , "I", "!", "", "N", "!"];
 	if(p > 0){
-		array[0]="X";
+		array[3]="X's";
 	}else{
-		array[0]="O";
+		array[3]="O's";
 	}
 	for (var i = list_items.length - 1; i >= 0; i--) {
 		list_items[i].innerHTML=array[i];
@@ -112,25 +112,52 @@ var result= function(p){
 	}	
 };
 
-var r3 = function(){
-	return Math.floor(Math.random() * 6) + 1;
-};
-var AIX = function(){
-	if(turnCount === 1){
-		var r = r3();
-		if(r === 1){
-			return 5;
-		}else if(r === 2){
-			return 1;
-		}else{
-			return 2;
+var aboutToWin= function(p){
+	for(var i in win){
+		console.log(board[win[i][0]]);
+		if(board[win[i][0]] === p && board[win[i][1]] === p){
+			return board[win[i][2]];
+		}else if(board[win[i][0]] === p && board[win[i][2]]){
+			return board[win[i][2]];
+		}else if(board[win[i][1]] === p && board[win[i][2]]){
+			return board[win[i][1]];
 		}
 	}
 };
 
+var r4 = function(){
+	return Math.floor(Math.random() * 6) + 1;
+};
+var AIi = function(){
+		var r = r4();
+		if(r === 1){
+			AI = AI5;
+			return 5;
+		}else if(r === 2){
+			AI = AI2;
+			return 2;
+		}else{
+			AI = AI1;
+			return 1;
+		}
+};
+
+var AI1= function(){
+};
+
+var AId= function(){
+	a = aboutToWin(player);
+	b = aboutToWin(player* -1);
+	if(a !== undefined){
+		return a;
+	}else if(b !== undefined){
+		return b;
+	}else{
+		return d;
+	}
+
+};
 
 
-
-
-
+var AI = AIi;
 

@@ -1,5 +1,11 @@
 h1{
 	text-align: center;
+	font-family: 'Lobster', cursive;
+}
+.bl{
+	background-color: grey;
+	width: 100%;
+	height: 
 }
 .resetB{
 	padding-top: 30px;
@@ -16,11 +22,11 @@ h1{
 	float: center;
 	text-align: center;
 	font-size: 150px;
+	font-family: 'Indie Flower', cursive;
 }
 .c{
 	border: 0px solid #000; 
 }
-
 .side{
 	border-top: 0px;
 	border-bottom:0px;
@@ -28,6 +34,14 @@ h1{
 .vert{
 	border-left: 0px;
 	border-right: 0px;
+}
+.container{
+	width:96%;
+	margin-left: 4%;
+}
+.colm{
+	background-color: white;
+	padding: 0px;
 }
 
 
@@ -56,5 +70,5 @@ h1{
 	}
 }
 .col{
-	padding: 0px;
+
 }
